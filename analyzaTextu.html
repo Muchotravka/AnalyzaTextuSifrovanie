@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    
+    <textarea name= "" id="Text" rows="20" cols="40"></textarea><br>
+    
+    <button type="button" onclick="Analyzuj()">Analyzuj</button>
+
+    <label for="searchbox"></label>
+    <input type="text" id="searchbox" value="">
+
+    <button type="button" onclick="HladajVtexte()">Hladaj v texte</button>
+    <h1>Vysledky:</h1>
+    <div id="vysledky"></div>
+
+    <button type="button" onclick="Zasifruj()">Zasifruj</button>
+    <div id="sifra"></div>
+
+    <script>
+
+        let textarea = document.getElementById("Text");
+        
+
+        function Analyzuj(){
+
+           for(let i = 0; i < textarea.value.length; i++){
+                console.log(textarea.value[i].length);
+                document.getElementById("vysledky").innerText=textarea.value[i].length;
+                }
+
+            let miestaBezMedzery = 0;
+            for(let i = 0; i < textarea.value.length; i++){
+                if(textarea.value[i]!=" "){
+                    miestaBezMedzery++;
+                }
+            }console.log("Pocet znakov bez medzier: ", miestaBezMedzery); 
+            document.getElementById("vysledky").innerHTML =  miestaBezMedzery.value;  
+        }
+
+        function HladajVtexte(){
+            let hladane= 0;
+            document.getElementById(searchbox).innerHTML = hladane.value;
+                
+            for(let hladane = 0; hladane < textarea.value.length; hladane++){
+                        console.log(hladane.value);
+                    }
+                document.getElementById("vysledky").innerHTML= ("V texte sa naslo: " + hladane.value);
+
+
+        }
+
+        function Zasifruj() { 
+
+            for(let i = 0; i < textarea.value.length; i++){
+                if(textarea.value[i] == "O"){
+                    textarea.value = textarea.value.slice(0,i) + 0 + textarea.value.slice(i+1) ;
+                }
+            }
+            for(let i = 0; i < textarea.value.length; i++){
+                if(textarea.value[i] == "o"){
+                    textarea.value = textarea.value.slice(0,i) + 0 + textarea.value.slice(i+1) ;
+                }
+            }
+            
+            for(let i = 0; i < textarea.value.length; i++){
+                if(textarea.value[i] == "E"){
+                    textarea.value = textarea.value.slice(0,i) + 3 + textarea.value.slice(i+1) ;
+                }
+            }
+            for(let i = 0; i < textarea.value.length; i++){
+                if(textarea.value[i] == "e"){
+                    textarea.value = textarea.value.slice(0,i) + 3 + textarea.value.slice(i+1) ;
+                }
+            }
+            for(let i = 0; i < textarea.value.length; i++){
+                if(textarea.value[i] == "A"){
+                    textarea.value = textarea.value.slice(0,i) + 4 + textarea.value.slice(i+1) ;
+                }
+            }
+            for(let i = 0; i < textarea.value.length; i++){
+                if(textarea.value[i] == "a"){
+                    textarea.value = textarea.value.slice(0,i) + 4 + textarea.value.slice(i+1) ;
+                }
+            }
+            for(let i = 0; i < textarea.value.length; i++){
+                if(textarea.value[i] == "s"){
+                    textarea.value = textarea.value.slice(0,i) + 5 + textarea.value.slice(i+1) ;
+                }
+            }
+            for(let i = 0; i < textarea.value.length; i++){
+                if(textarea.value[i] == "S"){
+                    textarea.value = textarea.value.slice(0,i) + 5 + textarea.value.slice(i+1) ;
+                }
+            }
+            for(let i = 0; i < textarea.value.length; i++){
+                if(textarea.value[i] == "B"){
+                    textarea.value = textarea.value.slice(0,i) + 8 + textarea.value.slice(i+1) ;
+                }
+            }
+            for(let i = 0; i < textarea.value.length; i++){
+                if(textarea.value[i] == "b"){
+                    textarea.value = textarea.value.slice(0,i) + 8 + textarea.value.slice(i+1) ;
+                }
+            }
+        } 
+    </script>
+    
+</body>
+</html>
